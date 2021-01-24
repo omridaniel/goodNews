@@ -1,19 +1,14 @@
 import React from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
 
 function Banner() {
     return (
         <>
          <Jumbotron container-fluid>
       <div className="container">
-        <h1>Hello, world!</h1>
+        <h1>The Good News!</h1>
         <p>
-          This is a simple hero unit, a simple jumbotron-style component for calling
-          extra attention to featured content or information.
-        </p>
-        <p>
-          <Button variant="primary">Learn more</Button>
+          Description here about seeing positive, exciting news.
         </p>
         </div>
       </Jumbotron>
