@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button'
 
-const Cards = ({ key, title, excerpt, link, image }) => {
+const Cards = ({ key, title, excerpt, link, image, className }) => {
   return (
-    <div class="card">
-      <div className="cardStyle2">
+    <div className="card container" style={{ borderRadius: "20px", border: "0px" }}>
+      <div className={className}>
         <div className="card-body">
           <div className="row">
             <div className="col" style={{ maxWidth: "30%" }}><img src={image} style={{ maxWidth: "100%", maxHeight: "95%", borderRadius: "20px" }} /></div>
@@ -15,7 +15,7 @@ const Cards = ({ key, title, excerpt, link, image }) => {
           </div>
           <div className="row">
             <div className="col text-left" style={{ marginTop: "15px" }}>
-              <a href={link} target="_blank"><Button variant="link">Visit Source</Button></a>
+              <a href={link} target="_blank"><Button variant="btn btn-light">Visit Source</Button></a>
             </div>
           </div>
         </div>

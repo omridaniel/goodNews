@@ -3,6 +3,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Cards from './components/Cards';
 import Banner from './components/Banner';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import Navbar from 'react-bootstrap/Navbar'
+import NavTop from'./components/NavTop';
+import SmallCards from './components/SmallCards';
+import Container from 'react-bootstrap/Container';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 ///////////////API Calls///////////////////////
 //User location
@@ -56,20 +62,57 @@ function App() {
     getAllArticles();
   },[]);
   
+  
+  function randomCardStyle() {
+    let random = Math.floor(Math.random() * 5)+1;
+    return "cardStyle" + random;
+  }
+
   return (
-    <div className="App">  
-      <Banner 
+    <div className="App"> 
+
+    <NavTop 
       city={user_city}
       country={user_country}/>
-      <div className="card-container">
-        {articles.map((data, index) => (
-            <Cards key={index}
-            title={data["title"]}
-            excerpt={data["summary"]["sentences"][0]}
-            link={data["links"]["permalink"]}
-            image={data["media"][0]["url"]} />
-          ))}
-    </div>  
+
+      <SmallCards />
+
+      <hr/>
+    
+    <Container fluid style={{ marginTop: "40px" }}>
+      <Row>
+        {/* Incorporate welcome modal and local stores here */}
+      </Row>
+      <Row >
+        <Col md>
+          <div className="card-container" style={{ borderRadius: "20px" }}>
+            {articles.slice(0,5).map((data, index) => (
+              <Cards key={index}
+              title={data["title"]}
+              excerpt={data["summary"]["sentences"][0]}
+              link={data["links"]["permalink"]}
+              image={data["media"][0]["url"]}
+              className={randomCardStyle()} />
+            ))}
+          </div>
+        </Col>
+        <Col md>
+          <div className="card-container">
+            {articles.slice(6,10).map((data, index) => (
+              <Cards key={index}
+              title={data["title"]}
+              excerpt={data["summary"]["sentences"][0]}
+              link={data["links"]["permalink"]}
+              image={data["media"][0]["url"]}
+              className={randomCardStyle()} />
+            ))}
+          </div>
+        </Col>
+      </Row>
+
+    </Container>
+     
+    
   </div>
   )}
 
