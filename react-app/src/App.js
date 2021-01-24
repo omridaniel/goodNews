@@ -4,9 +4,11 @@ import './App.css';
 import Cards from './components/Cards';
 import Banner from './components/Banner';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
-import {Grid, Row, Col} from 'react-bootstrap'
+// import Navbar from 'react-bootstrap/Navbar'
+import NavTop from'./components/NavTop';
+import SmallCards from './components/SmallCards';
+import Container from 'react-bootstrap/Container';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 ///////////////API Calls///////////////////////
 //User location
@@ -69,16 +71,15 @@ function App() {
   return (
     <div className="App"> 
 
-    <Navbar expand="lg" variant="light" bg="light">
-      <Container>
-        <Navbar.Brand href="#">The Good News!</Navbar.Brand>
-      </Container>
-    </Navbar>
-    <Banner 
-    city={user_city}
-    country={user_country}/>
+    <NavTop 
+      city={user_city}
+      country={user_country}/>
+
+      <SmallCards />
+
+      <hr/>
     
-    <Container fluid>
+    <Container fluid style={{ marginTop: "40px" }}>
       <Row>
         {/* Incorporate welcome modal and local stores here */}
       </Row>
