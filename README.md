@@ -1,6 +1,6 @@
+![Preview](https://cdn.discordapp.com/attachments/802336679754596372/802943776771407922/LogoGoodNews.png)
 # [The Good News](http://www.positivenews.space/)
 http://www.positivenews.space/
-
 ## About Us
 Discord Team Channel: #team-64
 
