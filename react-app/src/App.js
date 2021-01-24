@@ -4,8 +4,8 @@ import './App.css';
 import Cards from './components/Cards';
 import Banner from './components/Banner';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
+import NavTop from'./components/NavTop';
+import SmallCards from './components/SmallCards';
 
 ///////////////API Calls///////////////////////
 //User location
@@ -62,14 +62,13 @@ function App() {
   return (
     <div className="App"> 
 
-    <Navbar expand="lg" variant="light" bg="light">
-            <Container>
-                <Navbar.Brand href="#">The Good News!</Navbar.Brand>
-            </Container>
-        </Navbar>
-      <Banner 
-      city={user_city}
-      country={user_country}/>
+    <NavTop 
+    city={user_city}
+    country={user_country}/>
+
+      <Banner />
+      <SmallCards />
+
       <div className="card-container row">
         {articles.map((data, index) => (
             <Cards key={index}
