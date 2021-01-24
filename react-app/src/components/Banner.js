@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 
-function Banner() {
+const Banner = ({ city, country }) => {
     return (
         <>
          <Jumbotron container-fluid>
@@ -9,6 +9,9 @@ function Banner() {
         <h1>The Good News!</h1>
         <p>
           Description here about seeing positive, exciting news.
+        </p>
+        <p>
+          Location: {city}, {country}
         </p>
         </div>
       </Jumbotron>

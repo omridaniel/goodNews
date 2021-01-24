@@ -29,7 +29,7 @@ async function getNews(){
     redirect: 'follow'
   };
 
-  var baseURL ="https://cors-anywhere.herokuapp.com/https://api.aylien.com/news/stories?published_at.start=NOW-2DAYS&published_at.end=NOW&sentiment.title.polarity=positive&sentiment.body.polarity=positive&media.images.count.min=1&language[]=en&source.locations.country[]=";
+  var baseURL ="https://cors-anywhere.herokuapp.com/https://api.aylien.com/news/stories?published_at.start=NOW-30DAYS&published_at.end=NOW&sentiment.title.polarity=positive&sentiment.body.polarity=positive&media.images.count.min=1&language[]=en&source.locations.country[]=";
   var inbet = "&text=";
   var finalURL = baseURL.concat(user_country, inbet, user_city);
 
@@ -58,7 +58,9 @@ function App() {
   
   return (
     <div className="App">  
-      <Banner />
+      <Banner 
+      city={user_city}
+      country={user_country}/>
       <div className="card-container">
         {articles.map((data, index) => (
             <Cards key={index}
