@@ -266,7 +266,7 @@ body > section > div > div > div > div > div > div > div > div > div > a {
 }
 
 .footer-clean .item.social {
-  text-align: right;
+  text-align: left;
 }
 
 @media (max-width:767px) {

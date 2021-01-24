@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 
@@ -9,7 +9,7 @@ const NavTop = ({ city, country }) => {
             <Container>
                 <Navbar.Brand style={{ fontSize: "32px", fontFamily: "'Pacifico', cursive" }} href="#">The Good News</Navbar.Brand>
                 <p style={{ paddingTop: '1rem', fontSize: "18px" }}>
-              Location: {city}, {country}
+              <strong>Location:</strong> {city}, {country}
             </p>
             </Container>
         </Navbar>
