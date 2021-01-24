@@ -6,6 +6,7 @@ import Banner from './components/Banner';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 ///////////////API Calls///////////////////////
 //User location
@@ -59,26 +60,57 @@ function App() {
     getAllArticles();
   },[]);
   
+  
+  function randomCardStyle() {
+    let random = Math.floor(Math.random() * 5)+1;
+    return "cardStyle" + random;
+  }
+
   return (
     <div className="App"> 
 
     <Navbar expand="lg" variant="light" bg="light">
-            <Container>
-                <Navbar.Brand href="#">The Good News!</Navbar.Brand>
-            </Container>
-        </Navbar>
-      <Banner 
-      city={user_city}
-      country={user_country}/>
-      <div className="card-container row">
-        {articles.map((data, index) => (
-            <Cards key={index}
-            title={data["title"]}
-            excerpt={data["summary"]["sentences"][0]}
-            link={data["links"]["permalink"]}
-            image={data["media"][0]["url"]} />
-          ))}
-    </div>  
+      <Container>
+        <Navbar.Brand href="#">The Good News!</Navbar.Brand>
+      </Container>
+    </Navbar>
+    <Banner 
+    city={user_city}
+    country={user_country}/>
+    
+    <Container fluid>
+      <Row>
+        {/* Incorporate welcome modal and local stores here */}
+      </Row>
+      <Row >
+        <Col md>
+          <div className="card-container" style={{ borderRadius: "20px" }}>
+            {articles.slice(0,5).map((data, index) => (
+              <Cards key={index}
+              title={data["title"]}
+              excerpt={data["summary"]["sentences"][0]}
+              link={data["links"]["permalink"]}
+              image={data["media"][0]["url"]}
+              className={randomCardStyle()} />
+            ))}
+          </div>
+        </Col>
+        <Col md>
+          <div className="card-container">
+            {articles.slice(6,10).map((data, index) => (
+              <Cards key={index}
+              title={data["title"]}
+              excerpt={data["summary"]["sentences"][0]}
+              link={data["links"]["permalink"]}
+              image={data["media"][0]["url"]}
+              className={randomCardStyle()} />
+            ))}
+          </div>
+        </Col>
+      </Row>
+
+    </Container>
+     
     
   </div>
   )}
