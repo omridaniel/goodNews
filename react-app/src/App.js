@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import './App.css';
+import navigationBar from './components/navigationBar';
+import Cards from './components/Cards';
+import Navbar from 'react-bootstrap/Navbar';
+import Card from 'react-bootstrap/Card';
+import Banner from './components/Banner';
 
 //import apicall from './components/api-call';
 
@@ -95,6 +101,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      </Navbar>    
+        <Banner />
+        <Cards />
+        <Cards />
     </div>
   );
 }
