@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 
 const Cards = ({ key, title, excerpt, link, image }) => {
   return (
-    <div class="card">
+    <div class="card container">
       <div className="cardStyle2">
         <div className="card-body">
           <div className="row">
@@ -21,6 +21,7 @@ const Cards = ({ key, title, excerpt, link, image }) => {
         </div>
       </div>
     </div>
+    
   )
 }
 

@@ -4,16 +4,16 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 const Banner = ({ city, country }) => {
     return (
         <>
-         <Jumbotron container-fluid>
-      <div className="container">
-        <h1>The Good News!</h1>
-        <p>
-          Description here about seeing positive, exciting news.
-        </p>
-        <p>
-          Location: {city}, {country}
-        </p>
-        </div>
+         <Jumbotron container-fluid style={{ paddingTop: '6rem', paddingBottom: '6rem'}}>
+          <div className="container">
+            <h1>The Good News!</h1>
+            <p>
+              Description here about seeing positive, exciting news.
+            </p>
+            <p>
+              Location: {city}, {country}
+            </p>
+            </div>
       </Jumbotron>
         </>
     )
