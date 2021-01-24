@@ -1,4 +1,6 @@
 # [The Good News](http://www.positivenews.space/)
+http://www.positivenews.space/
+
 ## About Us
 Discord Team Channel: #team-64
 
